@@ -396,7 +396,7 @@ class MyApp extends pjsua2 {
             MyAccountConfig my_cfg = accCfgs.get(i);
 
             /* Customize account config */
-            my_cfg.accCfg.getNatConfig().setIceEnabled(true);
+            my_cfg.accCfg.getNatConfig().setIceEnabled(false);
             my_cfg.accCfg.getVideoConfig().setAutoTransmitOutgoing(true);
             my_cfg.accCfg.getVideoConfig().setAutoShowIncoming(true);
 
