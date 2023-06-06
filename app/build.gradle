@@ -19,4 +19,5 @@ android {
 
 dependencies {
     implementation project(path: ':pjsua2')
+    implementation 'com.iqiyi.xcrash:xcrash-android-lib:3.1.0'
 }
