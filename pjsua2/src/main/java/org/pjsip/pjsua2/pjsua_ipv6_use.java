@@ -10,6 +10,10 @@ package org.pjsip.pjsua2;
 
 public final class pjsua_ipv6_use {
   public final static int PJSUA_IPV6_DISABLED = 0;
-  public final static int PJSUA_IPV6_ENABLED = PJSUA_IPV6_DISABLED + 1;
+  public final static int PJSUA_IPV6_ENABLED = 1;
+  public final static int PJSUA_IPV6_ENABLED_NO_PREFERENCE = 1;
+  public final static int PJSUA_IPV6_ENABLED_PREFER_IPV4 = PJSUA_IPV6_ENABLED_NO_PREFERENCE + 1;
+  public final static int PJSUA_IPV6_ENABLED_PREFER_IPV6 = PJSUA_IPV6_ENABLED_PREFER_IPV4 + 1;
+  public final static int PJSUA_IPV6_ENABLED_USE_IPV6_ONLY = PJSUA_IPV6_ENABLED_PREFER_IPV6 + 1;
 }
 

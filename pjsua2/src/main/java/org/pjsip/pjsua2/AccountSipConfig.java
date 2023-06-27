@@ -102,6 +102,14 @@ public class AccountSipConfig extends PersistentObject {
     return pjsua2JNI.AccountSipConfig_transportId_get(swigCPtr, this);
   }
 
+  public void setIpv6Use(int value) {
+    pjsua2JNI.AccountSipConfig_ipv6Use_set(swigCPtr, this, value);
+  }
+
+  public int getIpv6Use() {
+    return pjsua2JNI.AccountSipConfig_ipv6Use_get(swigCPtr, this);
+  }
+
   public void readObject(ContainerNode node) throws java.lang.Exception {
     pjsua2JNI.AccountSipConfig_readObject(swigCPtr, this, ContainerNode.getCPtr(node), node);
   }

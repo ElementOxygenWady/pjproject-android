@@ -93,6 +93,21 @@ public class pjsua2JNI {
   public final static native int IntVector_doSet(long jarg1, IntVector jarg1_, int jarg2, int jarg3);
   public final static native void IntVector_doRemoveRange(long jarg1, IntVector jarg1_, int jarg2, int jarg3);
   public final static native void delete_IntVector(long jarg1);
+  public final static native long new_ByteVector__SWIG_0();
+  public final static native long new_ByteVector__SWIG_1(long jarg1, ByteVector jarg1_);
+  public final static native long ByteVector_capacity(long jarg1, ByteVector jarg1_);
+  public final static native void ByteVector_reserve(long jarg1, ByteVector jarg1_, long jarg2);
+  public final static native boolean ByteVector_isEmpty(long jarg1, ByteVector jarg1_);
+  public final static native void ByteVector_clear(long jarg1, ByteVector jarg1_);
+  public final static native long new_ByteVector__SWIG_2(int jarg1, short jarg2);
+  public final static native int ByteVector_doSize(long jarg1, ByteVector jarg1_);
+  public final static native void ByteVector_doAdd__SWIG_0(long jarg1, ByteVector jarg1_, short jarg2);
+  public final static native void ByteVector_doAdd__SWIG_1(long jarg1, ByteVector jarg1_, int jarg2, short jarg3);
+  public final static native short ByteVector_doRemove(long jarg1, ByteVector jarg1_, int jarg2);
+  public final static native short ByteVector_doGet(long jarg1, ByteVector jarg1_, int jarg2);
+  public final static native short ByteVector_doSet(long jarg1, ByteVector jarg1_, int jarg2, short jarg3);
+  public final static native void ByteVector_doRemoveRange(long jarg1, ByteVector jarg1_, int jarg2, int jarg3);
+  public final static native void delete_ByteVector(long jarg1);
   public final static native long new_StringToStringMap__SWIG_0();
   public final static native long new_StringToStringMap__SWIG_1(long jarg1, StringToStringMap jarg1_);
   public final static native long StringToStringMap_Iterator_getNextUnchecked(long jarg1, StringToStringMap.Iterator jarg1_);
@@ -892,6 +907,23 @@ public class pjsua2JNI {
   public final static native long AudioMedia_typecastFromMedia(long jarg1, Media jarg1_);
   public final static native long new_AudioMedia();
   public final static native void delete_AudioMedia(long jarg1);
+  public final static native void MediaFrame_type_set(long jarg1, MediaFrame jarg1_, int jarg2);
+  public final static native int MediaFrame_type_get(long jarg1, MediaFrame jarg1_);
+  public final static native void MediaFrame_buf_set(long jarg1, MediaFrame jarg1_, long jarg2, ByteVector jarg2_);
+  public final static native long MediaFrame_buf_get(long jarg1, MediaFrame jarg1_);
+  public final static native void MediaFrame_size_set(long jarg1, MediaFrame jarg1_, long jarg2);
+  public final static native long MediaFrame_size_get(long jarg1, MediaFrame jarg1_);
+  public final static native long new_MediaFrame();
+  public final static native void delete_MediaFrame(long jarg1);
+  public final static native long new_AudioMediaPort();
+  public final static native void delete_AudioMediaPort(long jarg1);
+  public final static native void AudioMediaPort_createPort(long jarg1, AudioMediaPort jarg1_, String jarg2, long jarg3, MediaFormatAudio jarg3_) throws java.lang.Exception;
+  public final static native void AudioMediaPort_onFrameRequested(long jarg1, AudioMediaPort jarg1_, long jarg2, MediaFrame jarg2_);
+  public final static native void AudioMediaPort_onFrameRequestedSwigExplicitAudioMediaPort(long jarg1, AudioMediaPort jarg1_, long jarg2, MediaFrame jarg2_);
+  public final static native void AudioMediaPort_onFrameReceived(long jarg1, AudioMediaPort jarg1_, long jarg2, MediaFrame jarg2_);
+  public final static native void AudioMediaPort_onFrameReceivedSwigExplicitAudioMediaPort(long jarg1, AudioMediaPort jarg1_, long jarg2, MediaFrame jarg2_);
+  public final static native void AudioMediaPort_director_connect(AudioMediaPort obj, long cptr, boolean mem_own, boolean weak_global);
+  public final static native void AudioMediaPort_change_ownership(AudioMediaPort obj, long cptr, boolean take_or_release);
   public final static native void AudioMediaPlayerInfo_formatId_set(long jarg1, AudioMediaPlayerInfo jarg1_, int jarg2);
   public final static native int AudioMediaPlayerInfo_formatId_get(long jarg1, AudioMediaPlayerInfo jarg1_);
   public final static native void AudioMediaPlayerInfo_payloadBitsPerSample_set(long jarg1, AudioMediaPlayerInfo jarg1_, long jarg2);
@@ -1387,6 +1419,8 @@ public class pjsua2JNI {
   public final static native String AccountSipConfig_authInitialAlgorithm_get(long jarg1, AccountSipConfig jarg1_);
   public final static native void AccountSipConfig_transportId_set(long jarg1, AccountSipConfig jarg1_, int jarg2);
   public final static native int AccountSipConfig_transportId_get(long jarg1, AccountSipConfig jarg1_);
+  public final static native void AccountSipConfig_ipv6Use_set(long jarg1, AccountSipConfig jarg1_, int jarg2);
+  public final static native int AccountSipConfig_ipv6Use_get(long jarg1, AccountSipConfig jarg1_);
   public final static native void AccountSipConfig_readObject(long jarg1, AccountSipConfig jarg1_, long jarg2, ContainerNode jarg2_) throws java.lang.Exception;
   public final static native void AccountSipConfig_writeObject(long jarg1, AccountSipConfig jarg1_, long jarg2, ContainerNode jarg2_) throws java.lang.Exception;
   public final static native long new_AccountSipConfig();
@@ -2693,6 +2727,7 @@ public class pjsua2JNI {
   public final static native long MediaFormatAudio_SWIGUpcast(long jarg1);
   public final static native long MediaFormatVideo_SWIGUpcast(long jarg1);
   public final static native long AudioMedia_SWIGUpcast(long jarg1);
+  public final static native long AudioMediaPort_SWIGUpcast(long jarg1);
   public final static native long AudioMediaPlayer_SWIGUpcast(long jarg1);
   public final static native long AudioMediaRecorder_SWIGUpcast(long jarg1);
   public final static native long ToneDesc_SWIGUpcast(long jarg1);
@@ -2718,6 +2753,12 @@ public class pjsua2JNI {
   public final static native long MediaConfig_SWIGUpcast(long jarg1);
   public final static native long EpConfig_SWIGUpcast(long jarg1);
 
+  public static void SwigDirector_AudioMediaPort_onFrameRequested(AudioMediaPort jself, long frame) {
+    jself.onFrameRequested(new MediaFrame(frame, false));
+  }
+  public static void SwigDirector_AudioMediaPort_onFrameReceived(AudioMediaPort jself, long frame) {
+    jself.onFrameReceived(new MediaFrame(frame, false));
+  }
   public static void SwigDirector_AudioMediaPlayer_onEof2(AudioMediaPlayer jself) {
     jself.onEof2();
   }
