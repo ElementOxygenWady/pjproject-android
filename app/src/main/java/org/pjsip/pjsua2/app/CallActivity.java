@@ -148,7 +148,9 @@ public class CallActivity extends Activity
         display = wm.getDefaultDisplay();
         rotation = display.getRotation();
         System.out.println("Device orientation changed: " + rotation);
-        
+
+        rotation = Surface.ROTATION_90; //TODO, Do not rotate capture
+
         switch (rotation) {
         case Surface.ROTATION_0:   // Portrait
             orient = pjmedia_orient.PJMEDIA_ORIENT_ROTATE_270DEG;
