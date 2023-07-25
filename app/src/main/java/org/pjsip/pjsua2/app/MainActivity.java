@@ -151,7 +151,7 @@ public class MainActivity extends Activity
         if (app.accList.size() == 0) {
             accCfg = new AccountConfig();
             accCfg.setIdUri("sip:localhost");
-            accCfg.getNatConfig().setIceEnabled(true);
+            accCfg.getNatConfig().setIceEnabled(false);
             accCfg.getVideoConfig().setAutoTransmitOutgoing(true);
             accCfg.getVideoConfig().setAutoShowIncoming(true);
             account = app.addAcc(accCfg);
@@ -399,8 +399,8 @@ public class MainActivity extends Activity
                         proxies.add(proxy);
                     }
 
-                    /* Enable ICE */
-                    accCfg.getNatConfig().setIceEnabled(true);
+                    /* Disable ICE */
+                    accCfg.getNatConfig().setIceEnabled(false);
 
                     /* Finally */
                     lastRegStatus = "";
