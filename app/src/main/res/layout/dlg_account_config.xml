@@ -21,6 +21,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
+	        android:hint="sip:username@address:port"
 	        android:inputType="textUri|textEmailAddress" >
 
 	        <requestFocus />
@@ -34,6 +35,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
+	        android:hint="sip:address:port"
 	        android:inputType="textUri" >
 	    </EditText>
     </TableRow>
@@ -45,6 +47,7 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_weight="1"
+	        android:hint="optional"
 	        android:inputType="textUri" >
 	    </EditText>
     </TableRow>
